@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-image: url(proj2.png);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background-size: 800px ;
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            color: black;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .confirmation-message {
+            display: none;
+            color: #28a745;
+            text-align: center;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Book Your Tour</h2>
+    <form id="bookingForm">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="date">Date of Tour</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="tourType">Tour Type</label>
+        <select id="tourType" name="tourType" required>
+            <option value="">Select a Tour</option>
+            <option value="temple Tour">Temple</option>
+            <option value="Hills Tour">Hills Tour</option>
+            <option value="Both">Both</option>
+        </select>
+
+        <button type="button" onclick="submitBooking()">Book Now</button>
+    </form>
+
+    <div class="confirmation-message" id="confirmationMessage">
+        Thank you for booking! We will contact you soon to confirm your tour.
+    </div>
+</div>
+
+<script>
+    function submitBooking() {
+        // Get form elements
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var date = document.getElementById("date").value;
+        var tourType = document.getElementById("tourType").value;
+
+        // Basic form validation
+        if (name && email && date && tourType) {
+            // Hide the form and show the confirmation message
+            document.getElementById("bookingForm").style.display = "none";
+            document.getElementById("confirmationMessage").style.display = "block";
+        } else {
+            alert("Please fill out all fields.");
+        }
+    }
+</script>
+
+</body>
+</html>

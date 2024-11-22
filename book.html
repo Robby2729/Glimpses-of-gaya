@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking</title>
+    <link rel="stylesheet" href="book.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Hotel Booking Form</h1>
+        <form id="bookingForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="checkin">Check-in Date:</label>
+            <input type="date" id="checkin" name="checkin" required>
+
+            <label for="checkout">Check-out Date:</label>
+            <input type="date" id="checkout" name="checkout" required>
+
+            <label for="rooms">Number of Rooms:</label>
+            <input type="number" id="rooms" name="rooms" min="1" required>
+
+            <button type="submit">Book Now</button>
+        </form>
+        <div id="confirmationMessage" class="hidden">
+            <h2>Booking Confirmed!</h2>
+            <p>Thank you for your booking, <span id="confirmName"></span>.</p>
+            <p>We have sent a confirmation email to <span id="confirmEmail"></span>.</p>
+        </div>
+    </div>
+    <script src="book.js"></script>
+</body>
+</html
